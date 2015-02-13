@@ -1,29 +1,50 @@
-var binary = function(number) {
+var binary = function(binumber) {
+ var binumArray = binumber.split("").reverse();
+ var decimalArray = [];
+ var sum = 0;
 
-var number = parseInt(number);
-var binary = Number(number).toString(2);
-return binary;
-// var ranger = [1..10];
-// var binary = ["0"];
-//
-// for(var index = 0; number <= (ranger[index]); index++) {
-//   if binary[binary.length-1] === 0 {
-//     binary = binary.pop
-//     binary.push("1")
-//   }
-// };
+  binumArray.forEach(function(binum, i) {
+    if (binum === "1") {
+      decimalArray.push(Math.pow(2, i));
+    }
+  });
 
+  decimalArray.forEach(function(element) {
+    sum += element;
+  });
+
+  return sum;
 }
 
-// $(document).ready(function() {
-//   $('form#scrabble').submit(function(event) {
-//     var word = $("input#word").val();
-//     var result = scrabble(word);
-//
-//     $(".points").text(result);
-//
-//     $("#result").show();
-//     event.preventDefault();
-//   });
-//
-// });
+var trinary = function(trinumber) {
+  var trinumArray = trinumber.split("").reverse();
+  var decimalArray = [];
+  var sum = 0;
+
+  trinumArray.forEach(function(trinum, i) {
+    if (trinum === "1") {
+      decimalArray.push(Math.pow(3, i));
+    } else if (trinum === "2") {
+      decimalArray.push((Math.pow(3, i) * 2));
+    }
+  });
+
+  decimalArray.forEach(function(element) {
+    sum += element;
+  });
+
+  return sum;
+}
+
+$(document).ready(function() {
+  $('form#binary').submit(function(event) {
+    var binum = $("input#binarynum").val();
+    var result = binary(binum);
+
+    $(".decimal").text(result);
+
+    $("#result").show();
+    event.preventDefault();
+  });
+
+});
