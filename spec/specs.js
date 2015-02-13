@@ -18,3 +18,9 @@ describe("trinary", function() {
     expect(trinary("1211122212121")).to.equal(977497);
   });
 });
+
+describe("hexadecimal", function() {
+  it("will return the decimal of a hexadecimal number under 10", function() {
+    expect(hexadecimal("3e8")).to.equal(1000);
+  });
+});
