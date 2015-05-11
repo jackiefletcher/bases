@@ -1,6 +1,6 @@
 INTRODUCTION
 ------------
-The bases app allows users to determine the decimal value of binary, trinary or hexidecimal numbers.
+The bases app allows users to determine the decimal value of binary, trinary or hexadecimal numbers.
 
 REQUIREMENTS
 ------------
